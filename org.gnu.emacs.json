@@ -17,17 +17,15 @@
     ],
     "modules": [
         {
-            "name": "emacs",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://www.nic.funet.fi/pub/gnu/ftp.gnu.org/pub/gnu/emacs/emacs-25.3.tar.xz",
-                    "sha256": "253ac5e7075e594549b83fd9ec116a9dc37294d415e2f21f8ee109829307c00b"
-                },
-                {
-                    "type": "patch",
-                    "path": "locale-fixup.patch"
-                },
+	    "name": "emacs",
+	    "buildsystem": "autotools",
+	    "sources": [
+		{
+		    "type": "git",
+		    "tag": "emacs-26.1",
+		    "commit": "07f8f9bc5a51f5aa94eb099f3e15fbe0c20ea1ea",
+		    "url": "git://git.sv.gnu.org/emacs.git"
+		},
                 {
                     "type": "patch",
                     "path": "appdata-releases.patch"
