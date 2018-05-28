@@ -11,7 +11,7 @@ diff --git a/etc/emacs.appdata.xml b/etc/emacs.appdata.xml
 index c39668c635..4fca9b50b1 100644
 --- a/etc/emacs.appdata.xml
 +++ b/etc/emacs.appdata.xml
-@@ -31,6 +31,9 @@
+@@ -31,5 +31,8 @@
   <launchable type="desktop-id">emacs</launchable>
   <url type="homepage">https://www.gnu.org/software/emacs</url>
   <update_contact>emacs-devel_AT_gnu.org</update_contact>
@@ -20,8 +20,6 @@ index c39668c635..4fca9b50b1 100644
 + <releases>
 + <release date="2018-05-28" version="26.1"/>
 + </releases>
-+ 
  </component>
 -- 
 2.17.0
-
