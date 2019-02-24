@@ -23,8 +23,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://alpha.gnu.org/gnu/emacs/pretest/emacs-26.1.91.tar.xz",
-                    "sha256": "0ca140136b72cfa0588648d2089f26a603a4be94ce065c0da7a765ce26ffd909"
+                    "url": "http://alpha.gnu.org/gnu/emacs/pretest/emacs-26.1.92.tar.xz",
+                    "sha256": "0aa1dfa39b020feb49b82a388863c8a4b2ee0f1dfc04528f49759dbba4f28d41"
                 },
                 {
                     "type": "patch",
