@@ -3,7 +3,7 @@
     "runtime": "org.freedesktop.Sdk",
     "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
-    "command": "emacs",
+    "command": "emacs-with-gpg-agent",
     "rename-icon": "emacs",
     "rename-appdata-file": "emacs.appdata.xml",
     "rename-desktop-file": "emacs.desktop",
@@ -17,6 +17,23 @@
         "--filesystem=/var/tmp"
     ],
     "modules": [
+        {
+            "name": "pinentry",
+            "config-opts": [
+                "--enable-pinentry-tty",
+                "--enable-pinentry-emacs",
+                "--disable-ncurses",
+                "--disable-pinentry-curses",
+                "--disable-fallback-curses"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
+                    "sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
+                }
+            ]
+        },
         {
             "name": "emacs",
             "buildsystem": "autotools",
@@ -41,7 +58,20 @@
                 {
                     "type": "patch",
                     "path": "appdata-screenshot-size.patch"
+                },
+                {
+                    "type": "script",
+                    "commands": [
+                        "gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry-emacs",
+                        "/app/bin/emacs \"$@\"",
+                        "pkill -TERM gpg-agent"
+                    ],
+                    "dest-filename": "emacs-with-gpg-agent"
                 }
+            ],
+            "post-install": [
+                "chmod a+x emacs-with-gpg-agent",
+                "mv emacs-with-gpg-agent /app/bin/"
             ],
             "cleanup": [
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
