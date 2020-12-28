@@ -1,5 +1,6 @@
 {
     "app-id": "org.gnu.emacs",
+    "branch": "beta-pgtk",
     "runtime": "org.freedesktop.Sdk",
     "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
@@ -11,7 +12,8 @@
         "--share=network",
         "--share=ipc",
         "--socket=pulseaudio",
-        "--socket=x11",
+        "--socket=wayland",
+        "--socket=fallback-x11",
         "--filesystem=host",
         "--filesystem=/tmp",
         "--filesystem=/var/tmp"
@@ -21,13 +23,15 @@
             "name": "emacs",
             "buildsystem": "autotools",
             "config-opts": [
-                "--with-gnutls"
+                "--with-gnutls",
+                "--with-pgtk"
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-27.1.tar.xz",
-                    "sha256": "4a4c128f915fc937d61edfc273c98106711b540c9be3cd5d2e2b9b5b2f172e41"
+                    "type": "git",
+                    "url": "https://git.savannah.gnu.org/git/emacs.git",
+                    "branch": "feature/pgtk",
+                    "commit": "ce14970f0268a5f27156aaf3612973c9d7b43780"
                 },
                 {
                     "type": "patch",
