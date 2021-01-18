@@ -32,7 +32,8 @@
                 "/bin",
                 "/share",
                 "/lib/pkgconfig",
-                "/lib/*.la"
+                "/lib/*.la",
+                "/app/lib/libjansson.a"
             ]
         },
         {
