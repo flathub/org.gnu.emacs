@@ -1,0 +1,3 @@
+[submodule "wrapper"]
+	path = wrapper
+	url = https://github.com/gasinvein/vscode-flatpak-wrapper.git

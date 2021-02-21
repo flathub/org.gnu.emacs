@@ -3,7 +3,7 @@
     "runtime": "org.freedesktop.Sdk",
     "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
-    "command": "emacs",
+    "command": "emacs-wrapper",
     "rename-icon": "emacs",
     "rename-appdata-file": "emacs.appdata.xml",
     "rename-desktop-file": "emacs.desktop",
@@ -50,6 +50,10 @@
                 },
                 {
                     "type": "patch",
+                    "path": "emacs.desktop-exec-wrapper.patch"
+                },
+                {
+                    "type": "patch",
                     "path": "appdata-releases.patch"
                 },
                 {
@@ -69,6 +73,27 @@
                 "/share/icons/hicolor/scalable/apps/emacs.ico",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
+            ]
+        },
+        {
+            "name": "wrapper",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "wrapper"
+                },
+                {
+                    "type": "file",
+                    "path": "emacs-first-run.txt"
+                }
+            ],
+            "config-opts": [
+                "-Deditor_binary=/app/bin/emacs",
+                "-Dprogram_name=emacs-wrapper",
+                "-Deditor_title=GNU Emacs",
+                "-Dflagfile_prefix=flatpak-emacs",
+                "-Dfirst_run_template=emacs-first-run.txt"
             ]
         }
     ]

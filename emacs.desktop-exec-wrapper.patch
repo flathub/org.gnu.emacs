@@ -1,0 +1,27 @@
+From 26b756f1ab5b22fd117e036144d4821febc95a09 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Joonas=20Saraj=C3=A4rvi?= <muep@iki.fi>
+Date: Sat, 20 Feb 2021 21:29:25 +0200
+Subject: [PATCH] Execute emacs-wrapper instead of emacs
+
+This is needed in the flatpak-based distribution, so that invocations
+using the .desktop file will also go through the wrapper.
+---
+ etc/emacs.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/etc/emacs.desktop b/etc/emacs.desktop
+index 2e6496e58c..a518ec4a29 100644
+--- a/etc/emacs.desktop
++++ b/etc/emacs.desktop
+@@ -3,7 +3,7 @@ Name=Emacs
+ GenericName=Text Editor
+ Comment=Edit text
+ MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+-Exec=emacs %F
++Exec=emacs-wrapper %F
+ Icon=emacs
+ Type=Application
+ Terminal=false
+-- 
+2.20.1
+
