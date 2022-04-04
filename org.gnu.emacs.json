@@ -67,6 +67,10 @@
                 {
                     "type": "patch",
                     "path": "metainfo-screenshot-size.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "metainfo-caption-point.patch"
                 }
             ],
             "cleanup": [
