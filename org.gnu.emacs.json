@@ -50,6 +50,10 @@
                 },
                 {
                     "type": "patch",
+                    "path": "emacs-fixed-ctags-local-command-execute-vulnerability.patch"
+                },
+                {
+                    "type": "patch",
                     "path": "emacs.desktop-exec-wrapper.patch"
                 },
                 {
