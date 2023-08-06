@@ -14,7 +14,8 @@
         "--socket=x11",
         "--filesystem=host",
         "--filesystem=/tmp",
-        "--filesystem=/var/tmp"
+        "--filesystem=/var/tmp",
+        "--talk-name=org.freedesktop.Flatpak"
     ],
     "modules": [
         {
