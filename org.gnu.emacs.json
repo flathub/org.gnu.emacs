@@ -38,10 +38,30 @@
             ]
         },
         {
+            "name": "tree-sitter",
+            "buildsystem": "simple",
+            "build-commands": [
+                "PREFIX=\"/app\" make",
+                "PREFIX=\"/app\" make install"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/tree-sitter/tree-sitter.git"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig",
+                "/lib/*.a"
+            ]
+        },
+        {
             "name": "emacs",
             "buildsystem": "autotools",
             "config-opts": [
-                "--with-gnutls"
+                "--with-gnutls",
+                "--with-tree-sitter"
             ],
             "sources": [
                 {
@@ -85,8 +105,9 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "dir",
-                    "path": "wrapper"
+                    "type": "git",
+                    "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
+                    "branch": "master"
                 },
                 {
                     "type": "file",
