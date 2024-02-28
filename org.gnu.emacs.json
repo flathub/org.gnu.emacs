@@ -56,7 +56,6 @@
                 "/lib/pkgconfig",
                 "/lib/*.a"
             ]
-
         },
         {
             "name": "emacs",
@@ -107,8 +106,9 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "dir",
-                    "path": "wrapper"
+                    "type": "git",
+                    "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
+                    "branch": "master"
                 },
                 {
                     "type": "file",
