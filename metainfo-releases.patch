@@ -11,11 +11,12 @@ diff --git a/etc/emacs.metainfo.xml b/etc/emacs.metainfo.xml
 index 11df8a7159..65234f87f4 100644
 --- a/etc/emacs.metainfo.xml
 +++ b/etc/emacs.metainfo.xml
-@@ -45,4 +45,14 @@
+@@ -45,4 +45,15 @@
    </screenshot>
   </screenshots>
   <update_contact>emacs-devel_AT_gnu.org</update_contact>
 + <releases>
++   <release date="2024-01-18" version="29.2"/>
 +   <release date="2023-07-30" version="29.1"/>
 +   <release date="2022-09-12" version="28.2"/>
 +   <release date="2022-04-04" version="28.1"/>
