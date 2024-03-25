@@ -11,7 +11,8 @@
         "--share=network",
         "--share=ipc",
         "--socket=pulseaudio",
-        "--socket=x11",
+        "--socket=wayland",
+        "--socket=fallback-x11",
         "--filesystem=host",
         "--filesystem=/tmp",
         "--filesystem=/var/tmp",
@@ -62,7 +63,8 @@
             "buildsystem": "autotools",
             "config-opts": [
                 "--with-gnutls",
-                "--with-tree-sitter"
+                "--with-tree-sitter",
+                "--with-pgtk"
             ],
             "sources": [
                 {
@@ -106,9 +108,8 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
-                    "branch": "master"
+                    "type": "dir",
+                    "path": "wrapper"
                 },
                 {
                     "type": "file",
