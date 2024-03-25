@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnu.emacs",
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "emacs-wrapper",
     "rename-icon": "emacs",
@@ -11,7 +11,8 @@
         "--share=network",
         "--share=ipc",
         "--socket=pulseaudio",
-        "--socket=x11",
+        "--socket=wayland",
+        "--socket=fallback-x11",
         "--filesystem=host",
         "--filesystem=/tmp",
         "--filesystem=/var/tmp",
@@ -48,7 +49,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/tree-sitter/tree-sitter.git",
-                    "tag": "v0.21.0"
+                    "tag": "v0.22.2"
                 }
             ],
             "cleanup": [
@@ -62,13 +63,14 @@
             "buildsystem": "autotools",
             "config-opts": [
                 "--with-gnutls",
-                "--with-tree-sitter"
+                "--with-tree-sitter",
+                "--with-pgtk"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-29.1.tar.xz",
-                    "sha256": "d2f881a5cc231e2f5a03e86f4584b0438f83edd7598a09d24a21bd8d003e2e01"
+                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-29.3.tar.xz",
+                    "sha256": "c34c05d3ace666ed9c7f7a0faf070fea3217ff1910d004499bd5453233d742a0"
                 },
                 {
                     "type": "patch",
@@ -106,9 +108,8 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
-                    "commit": "e42aba9"
+                    "type": "dir",
+                    "path": "wrapper"
                 },
                 {
                     "type": "file",
