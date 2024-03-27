@@ -17,7 +17,7 @@ index 11df8a7159..65234f87f4 100644
   <update_contact>emacs-devel_AT_gnu.org</update_contact>
 + <releases>
 +   <release date="2024-03-24" version="29.3"/>
-+   <release date="2024-01-19" version="29.2"/>
++   <release date="2024-01-18" version="29.2"/>
 +   <release date="2023-07-30" version="29.1"/>
 +   <release date="2022-09-12" version="28.2"/>
 +   <release date="2022-04-04" version="28.1"/>
