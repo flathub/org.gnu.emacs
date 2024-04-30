@@ -59,11 +59,117 @@
 
         },
         {
+            "name": "libgccjit",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--with-linker-hash-style=gnu",
+                "--enable-checking=release",
+                "--enable-host-shared",
+                "--enable-languages=jit",
+                "--disable-bootstrap",
+                "--disable-gcov",
+                "--disable-libada",
+                "--disable-libgomp",
+                "--disable-liboffloadmic",
+                "--disable-libquadmath",
+                "--disable-libquadmath-support",
+                "--disable-libsanitizer",
+                "--disable-libssp",
+                "--disable-libstdcxx",
+                "--disable-libvtv",
+                "--disable-lto",
+                "--disable-multilib"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gcc.gnu.org/git/gcc.git",
+                    "tag": "releases/gcc-13.2.0"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/debug",
+                "/share",
+                "/libexec",
+                "*.la",
+                "*.h"
+            ],
+            "modules": [
+                {
+                    "name": "gmp",
+                    "buildsystem": "autotools",
+                    "config-opts": [
+                        "--enable-static",
+                        "--disable-shared",
+                        "CFLAGS=-fPIC"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz",
+                            "sha256": "a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898"
+                        }
+                    ],
+                    "cleanup": [
+                        "*"
+                    ]
+                },
+                {
+                    "name": "mpfr",
+                    "buildsystem": "autotools",
+                    "config-opts": [
+                        "--enable-static",
+                        "--disable-shared",
+                        "CFLAGS=-fPIC"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://gitlab.inria.fr/mpfr/mpfr.git",
+                            "tag": "4.2.1"
+                        },
+                        {
+                            "type": "patch",
+                            "path": "mpfr-config-warning.patch"
+                        }
+                    ],
+                    "cleanup": [
+                        "*"
+                    ]
+                },
+                {
+                    "name": "mpc",
+                    "buildsystem": "autotools",
+                    "config-opts": [
+                        "--enable-static",
+                        "--disable-shared",
+                        "CFLAGS=-fPIC"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://gitlab.inria.fr/mpc/mpc.git",
+                            "tag": "1.3.1"
+                        },
+                        {
+                            "type": "script",
+                            "commands": [ "autoreconf -fi" ]
+                        }
+                    ],
+                    "cleanup": [
+                        "*"
+                    ]
+                }
+            ]
+        },
+        {
             "name": "emacs",
             "buildsystem": "autotools",
             "config-opts": [
                 "--with-gnutls",
-                "--with-tree-sitter"
+                "--with-tree-sitter",
+                "--with-native-compilation"
             ],
             "sources": [
                 {
