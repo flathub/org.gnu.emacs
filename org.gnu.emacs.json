@@ -78,6 +78,8 @@
                 }
             ],
             "cleanup": [
+                "/include",
+                "/lib/systemd",
                 "/share/icons/hicolor/scalable/apps/emacs.ico",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
