@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnu.emacs",
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "23.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "emacs-wrapper",
     "rename-icon": "emacs",
@@ -20,25 +20,6 @@
     ],
     "modules": [
         {
-            "name": "jansson",
-            "buildsystem": "autotools",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.gz",
-                    "sha256": "5798d010e41cf8d76b66236cfb2f2543c8d082181d16bc3085ab49538d4b9929"
-                }
-            ],
-            "cleanup": [
-                "/include",
-                "/bin",
-                "/share",
-                "/lib/pkgconfig",
-                "/lib/*.la",
-                "/lib/libjansson.a"
-            ]
-        },
-        {
             "name": "tree-sitter",
             "buildsystem": "simple",
             "build-commands": [
@@ -49,7 +30,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/tree-sitter/tree-sitter.git",
-                    "tag": "v0.22.2"
+                    "tag": "v0.25.10"
                 }
             ],
             "cleanup": [
@@ -70,8 +51,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-29.4.tar.xz",
-                    "sha256": "ba897946f94c36600a7e7bb3501d27aa4112d791bfe1445c61ed28550daca235"
+                    "url": "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz",
+                    "sha256": "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
                 },
                 {
                     "type": "patch",
@@ -99,6 +80,8 @@
                 }
             ],
             "cleanup": [
+                "/include",
+                "/lib/systemd",
                 "/share/icons/hicolor/scalable/apps/emacs.ico",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
@@ -109,8 +92,9 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "dir",
-                    "path": "wrapper"
+                    "type": "git",
+                    "url": "https://github.com/flathub-infra/ide-flatpak-wrapper.git",
+                    "commit": "3314b55ccd4ece8810715787e246f8407e20caab"
                 },
                 {
                     "type": "file",
