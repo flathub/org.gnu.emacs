@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnu.emacs",
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "emacs-wrapper",
     "rename-icon": "emacs",
@@ -29,7 +29,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/tree-sitter/tree-sitter.git",
-                    "tag": "v0.25.10"
+                    "tag": "v0.25.10",
+                    "commit": "da6fe9beb4f7f67beb75914ca8e0d48ae48d6406"
                 }
             ],
             "cleanup": [
@@ -75,6 +76,10 @@
                 {
                     "type": "patch",
                     "path": "metainfo-caption-point.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "metainfo-vcs-browser.patch"
                 }
             ],
             "cleanup": [
@@ -92,7 +97,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flathub-infra/ide-flatpak-wrapper.git",
-                    "commit": "3314b55ccd4ece8810715787e246f8407e20caab"
+                    "commit": "2881abaf9efc6e14923b8a0bb085275aaf2fbddf"
                 },
                 {
                     "type": "file",

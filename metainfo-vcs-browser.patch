@@ -1,0 +1,10 @@
+--- ./etc/emacs.metainfo.xml.orig	2026-03-31 21:42:42.134168939 +0200
++++ ./etc/emacs.metainfo.xml	2026-03-31 21:43:31.503586070 +0200
+@@ -33,6 +33,7 @@
+  <url type="help">https://www.gnu.org/software/emacs/documentation.html</url>
+  <url type="donation">https://my.fsf.org/donate/</url>
+  <url type="contact">https://lists.gnu.org/mailman/listinfo/emacs-devel/</url>
++ <url type="vcs-browser">https://cgit.git.savannah.gnu.org/cgit/emacs.git</url>
+  <launchable type="desktop-id">org.gnu.emacs.desktop</launchable>
+  <launchable type="service">emacs.service</launchable>
+  <project_group>GNU</project_group>
