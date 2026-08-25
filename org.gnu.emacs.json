@@ -64,6 +64,10 @@
                 {
                     "type": "patch",
                     "path": "metainfo-launchable.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "metainfo-supports-internet-always.patch"
                 }
             ],
             "cleanup": [
