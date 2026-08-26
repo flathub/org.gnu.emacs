@@ -1,21 +1,22 @@
-From 2ed79c5c5f1412ea202422eb1f32400155531e05 Mon Sep 17 00:00:00 2001
+From c3839596069d1c2da4fd26df839b208452faf2c1 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Joonas=20Saraj=C3=A4rvi?= <muep@iki.fi>
-Date: Mon, 4 Apr 2022 20:20:12 +0300
-Subject: [PATCH] Add releases element to metainfo.xml
+Date: Tue, 25 Aug 2026 18:48:26 +0300
+Subject: [PATCH] Add releases element to emacs.metainfo.xml
 
 ---
- etc/emacs.metainfo.xml | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ etc/emacs.metainfo.xml | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
 diff --git a/etc/emacs.metainfo.xml b/etc/emacs.metainfo.xml
-index 11df8a7159..65234f87f4 100644
+index e6f748cd3b0..babd65264aa 100644
 --- a/etc/emacs.metainfo.xml
 +++ b/etc/emacs.metainfo.xml
-@@ -45,4 +45,19 @@
-   </screenshot>
-  </screenshots>
-  <update_contact>emacs-devel_AT_gnu.org</update_contact>
+@@ -86,4 +86,21 @@
+     <color type="primary" scheme_preference="light">#7f5ab6</color>
+     <color type="primary" scheme_preference="dark">#624195</color>
+  </branding>
 + <releases>
++   <release date="2026-08-24" version="31.1"/>
 +   <release date="2025-08-14" version="30.2"/>
 +   <release date="2025-02-23" version="30.1"/>
 +   <release date="2024-06-24" version="29.4"/>
@@ -30,7 +31,8 @@ index 11df8a7159..65234f87f4 100644
 +   <release date="2019-04-12" version="26.2"/>
 +   <release date="2018-05-28" version="26.1"/>
 + </releases>
++
  </component>
 -- 
-2.35.1
+2.55.0
 
